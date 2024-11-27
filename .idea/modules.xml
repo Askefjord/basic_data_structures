@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/basic_data_structures.iml" filepath="$PROJECT_DIR$/.idea/basic_data_structures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/learnpy.iml" filepath="$PROJECT_DIR$/.idea/learnpy.iml" />
     </modules>
   </component>
 </project>
