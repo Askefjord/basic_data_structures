@@ -1,4 +1,6 @@
-l = [[2,3],[2,2],[2,3]]
+import random
+pairs = []
+result = []
 
 def get_uninum(numbers):
     unique = []
@@ -7,4 +9,12 @@ def get_uninum(numbers):
             unique.append(num)
     return unique
 
-print(get_uninum(l))
+for i in range (1,21):
+    for j in range(1,21):
+        pairs.append([i,j])
+pairs = get_uninum(pairs)
+rn = random.randrange(3,21)
+for i in pairs:
+    if rn % sum(i):
+        result.append(i)
+print(result)
