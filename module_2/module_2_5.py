@@ -9,5 +9,7 @@ def get_matrix(line, column, value):
             a.append(value)
     return matrix
 
-m = get_matrix(3,4,2)
-print(m)
+m1 = get_matrix(3,1,0)
+m2 = get_matrix(3,1,1)
+m3 = get_matrix(3,1,0)
+print(f'{m1}\n{m2}\n{m3}')
