@@ -12,8 +12,9 @@ while r < 18:
         r = i
         break
 
-for i in pairs:
-    if rn % sum(i) == 0:
-        result.append(i)
+for i in range(len(pairs)):
+    if rn % sum(pairs[i]) == 0:
+        x = pairs[i]
+        result.append(x)
 print(rn)
-print(result)
+print(*result)
