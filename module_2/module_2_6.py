@@ -21,11 +21,13 @@ while r < 18:
 #         nr.append(i)
 #         break
 # print(pairs)
+
 for i in range(len(pairs)):
     if rnum % sum(pairs[i]) == 0:
         x = pairs[i]
         result.append(x)
 
+# result = ''.join(str(num) for sublist in pairs for num in sublist)
 result = sum(result, [])
 print(f'Random number is: {rnum}')
 print('Your code: ', *result)
