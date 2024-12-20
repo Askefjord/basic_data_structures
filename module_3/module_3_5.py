@@ -1,7 +1,11 @@
 def multi_digits(number):
-    strnum = str(number)
-    if len(strnum) == 1:
-        return
-    return int(strnum[:1]) * multi_digits(int(strnum[1:]))
+    strnum = str(number).rstrip('0')
 
-print(multi_digits(323))
+    if len(strnum) > 1:
+        return int(strnum[:1]) * multi_digits(int(strnum[1:]))
+    else:
+        return int(strnum[:1])
+
+print(multi_digits(402030))
+print(multi_digits(40203))
+print(multi_digits(14202340))
