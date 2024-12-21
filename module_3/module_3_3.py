@@ -6,6 +6,7 @@ print_params()
 print_params(b = 25)
 print_params(c = [1,2,3])
 
+
 values_list = [0.2, 'sky', ['a','b']]
 values_dict = {'a': 0, 'b': False, 'c': 'wind'}
 print_params(*values_list)
