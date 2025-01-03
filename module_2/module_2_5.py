@@ -1,4 +1,6 @@
-def get_matrix(line, column, value):
+import random
+
+def get_matrix(line, column):
     matrix = []
 
     for i in range(line):
@@ -6,10 +8,15 @@ def get_matrix(line, column, value):
         matrix.append(a)
 
         for j in range(column):
-            a.append(value)
+            rn = random.randrange(0, 2)
+            a.append(rn)
     return matrix
 
-m1 = get_matrix(3,1,0)
-m2 = get_matrix(3,1,1)
-m3 = get_matrix(3,1,0)
-print(f'{m1}\n{m2}\n{m3}')
+
+m1 = sum(get_matrix(6,1), [])
+m2 = sum(get_matrix(6,1), [])
+m3 = sum(get_matrix(6,1), [])
+m4 = sum(get_matrix(6,1), [])
+m5 = sum(get_matrix(6,1), [])
+m6 = sum(get_matrix(6,1), [])
+print(f'{m1}\n{m2}\n{m3}\n{m4}\n{m5}\n{m6}')
