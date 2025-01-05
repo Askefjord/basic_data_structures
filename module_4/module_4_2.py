@@ -7,3 +7,4 @@ def test_func():
                 # в global и built-in пространтсвах
 
 test_func()
+#check
