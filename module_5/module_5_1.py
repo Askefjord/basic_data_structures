@@ -8,7 +8,7 @@ class House:
         return self.number_of_floors
 
     def __str__(self):
-        return f'\nName is: {self.name}\nNumber of floors: {self.number_of_floors}'
+        return f'Name is: {self.name} Number of floors: {self.number_of_floors}'
     #############################################
 
     def __eq__(self, other):
@@ -37,9 +37,9 @@ class House:
 
     def __add__(self, other):
         if isinstance(other, House):
-            return self.number_of_floors + other.number_of_floors
+            return House(f'{self.name} + {other.name}', self.number_of_floors + other.number_of_floors)
         else:
-            return self.number_of_floors + other
+            return House(f'{self.name}', self.number_of_floors + other)
 
     def __radd__(self, other):
         return self.__add__(other)
@@ -54,32 +54,39 @@ class House:
             for num in range(1, floor+1):
                 print(num)
 
-some_moll = House('Some Moll', 15)
-aquapark = House('Aquapark', 10)
+if __name__ == '__main__':
+    some_moll = House('Some Moll', 15)
+    aquapark = House('Aquapark', 10)
 
-some_moll.go_to(17)
-some_moll.go_to(5)
+    some_moll.go_to(17)
+    some_moll.go_to(5)
+    print('\n↓ Module_5_2 "Dunder Methods"')
+    # ↓ Module_5_2 "Dunder Methods"
+    print(some_moll)
+    print(len(some_moll))
+    print('\n↓ Module_5_3 "Overdrive Methods"')
+    # ↓ Module_5_3 "Overdrive Methods"
+    some_moll.number_of_floors = 10
+    aquapark.number_of_floors = 20
 
-# ↓ Module_5_2 "Dunder Methods"
-print(some_moll)
-print(len(some_moll))
+    print(some_moll)
+    print(aquapark)
 
-# ↓ Module_5_3 "Overdrive Methods"
-print('\n')
-print(some_moll == aquapark)
-print(some_moll + 10)
-print(some_moll)
+    print(some_moll == aquapark)
 
-print(some_moll == aquapark)
+    some_moll = some_moll + 10
+    print(some_moll)
+    print(some_moll == aquapark)
 
-some_moll += 10
-print(some_moll)
+    some_moll += 10
+    print(some_moll)
 
-aquapark = 10 + aquapark
-print(aquapark)
+    aquapark = 10 + aquapark
+    print(aquapark)
 
-print(some_moll > aquapark)
-print(some_moll >= aquapark)
-print(some_moll < aquapark)
-print(some_moll <= aquapark)
-print(some_moll != aquapark)
+    print(some_moll > aquapark)
+    print(some_moll >= aquapark)
+    print(some_moll < aquapark)
+    print(some_moll <= aquapark)
+    print(some_moll != aquapark)
+
