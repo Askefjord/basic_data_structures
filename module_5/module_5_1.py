@@ -3,6 +3,13 @@ class House:
         self.name = name
         self.number_of_floors = number_of_floors
 
+    def go_to(self, floor):
+        if floor > self.number_of_floors:
+            print('This floor does not exist')
+        else:
+            for num in range(1, floor + 1):
+                print(num)
+
     # Module_5_2 "Dunder Methods" ↓ #############
     def __len__(self):
         return self.number_of_floors
@@ -11,6 +18,7 @@ class House:
         return f'Name is: {self.name} Number of floors: {self.number_of_floors}'
     #############################################
 
+    # Module_5_3 "Overdrive Methods" ↓ ##########
     def __eq__(self, other):
         if isinstance(other, House):
             return self.number_of_floors == other.number_of_floors
@@ -46,13 +54,7 @@ class House:
 
     def __iadd__(self, other):
         return self.__add__(other)
-
-    def go_to(self, floor):
-        if floor > self.number_of_floors:
-            print('This floor does not exist')
-        else:
-            for num in range(1, floor+1):
-                print(num)
+    #############################################
 
 if __name__ == '__main__':
     some_moll = House('Some Moll', 15)
@@ -60,10 +62,12 @@ if __name__ == '__main__':
 
     some_moll.go_to(17)
     some_moll.go_to(5)
+
     print('\n↓ Module_5_2 "Dunder Methods"')
     # ↓ Module_5_2 "Dunder Methods"
     print(some_moll)
     print(len(some_moll))
+
     print('\n↓ Module_5_3 "Overdrive Methods"')
     # ↓ Module_5_3 "Overdrive Methods"
     some_moll.number_of_floors = 10
