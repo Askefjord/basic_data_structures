@@ -63,13 +63,13 @@ if __name__ == '__main__':
     some_moll.go_to(17)
     some_moll.go_to(5)
 
-    print('\n↓ Module_5_2 "Dunder Methods"')
     # ↓ Module_5_2 "Dunder Methods"
+    print('\n↓ Module_5_2 "Dunder Methods"')
     print(some_moll)
     print(len(some_moll))
 
-    print('\n↓ Module_5_3 "Overdrive Methods"')
     # ↓ Module_5_3 "Overdrive Methods"
+    print('\n↓ Module_5_3 "Overdrive Methods"')
     some_moll.number_of_floors = 10
     aquapark.number_of_floors = 20
 
