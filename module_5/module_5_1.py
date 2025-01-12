@@ -1,4 +1,5 @@
 class House:
+
     def __init__(self, name, number_of_floors):
         self.name = name
         self.number_of_floors = number_of_floors
@@ -57,6 +58,7 @@ class House:
     #############################################
 
 if __name__ == '__main__':
+
     some_moll = House('Some Moll', 15)
     aquapark = House('Aquapark', 10)
 
@@ -93,4 +95,6 @@ if __name__ == '__main__':
     print(some_moll < aquapark)
     print(some_moll <= aquapark)
     print(some_moll != aquapark)
+
+
 
