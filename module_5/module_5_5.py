@@ -1,26 +1,26 @@
 class User:
-    users_dict = {}
     def __init__(self, nickname, password, age):
         self.nickname = nickname
-        self.password = password
+        self.password = hash(password)
         self.age = age
 
 class Video:
-    video_dict = {}
-    def __init__(self, title, duration, time_now, adult_mode):
+    def __init__(self, title, duration, adult_mode=False):
         self.title = title
         self.duration = duration
         self.time_now = 0
-        self.adult_mode = False
+        self.adult_mode = adult_mode
 
 class UrTube:
-    def __init__(self, users, videos, current_user):
-        self.users = User.users_dict
-        self.videos = Video.video_dict
+    def __init__(self):
+        self.users = []
+        self.videos = []
         self.current_user = None
 
     def log_in(self, nickname, password):
-        pass
+        for user in self.users:
+            if user.nickname == nickname and password == hash(user.password):
+                self.current_user = user
 
     def register(self, nickname, password, age):
         pass
@@ -37,3 +37,5 @@ class UrTube:
     def watch_video(self, video_name):
         pass
 
+if __name__ == '__main__':
+    x = UrTube()
