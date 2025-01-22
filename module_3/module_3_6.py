@@ -6,54 +6,61 @@ data_structure = [
     ((), [{(2, 'Urban', ('Urban2', 35))}])
 ]
 
-def addition_data(structure):
-    nums = 0
+def addition_data(data, summa=0):
 
-    for item in structure:
+    for item in data:
+
         if isinstance(item, str):
-            nums += len(item)
+            summa += len(item)
         elif isinstance(item, int):
-            nums += item
+            summa += item
         elif isinstance(item, list):
+
             for lst in item:
                 if isinstance(lst, int):
-                    nums += lst
+                    summa += lst
                 elif isinstance(lst, str):
-                    nums += len(lst)
+                    summa += len(lst)
                 else:
-                    nums = addition_data(nums)
+                    summa = addition_data([lst], summa)
+
 
         elif isinstance(item, dict):
+
             for key in item:
                 value = item[key]
-                for key in item:
-                    value = item[key]
-                    if isinstance(key, str):
-                        nums += len(key)
-                    if isinstance(value, int):
-                        nums += value
-                    elif isinstance(value, str):
-                        nums += len(value)
+
+                if isinstance(key, str):
+                    summa += len(key)
+                if isinstance(value, int):
+                    summa += value
+                elif isinstance(value, str):
+                    summa += len(value)
 
         elif isinstance(item, set):
+
             for st in item:
+
                 if isinstance(st, int):
-                    nums += st
+                    summa += st
                 elif isinstance(st, str):
-                    nums += len(st)
+                    summa += len(st)
                 else:
-                    nums = addition_data(nums)
+                    summa = addition_data([st], summa)
 
         elif isinstance(item, tuple):
+
             for tup in item:
+
                 if isinstance(tup, int):
-                    nums += tup
+                    summa += tup
                 elif isinstance(tup, str):
-                    nums += len(tup)
+                    summa += len(tup)
                 else:
-                    nums = addition_data(nums)
+                    summa = addition_data([tup], summa)
         else:
             continue
-    return nums
+
+    return summa
 
 print(addition_data(data_structure))
