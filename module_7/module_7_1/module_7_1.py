@@ -12,8 +12,8 @@ class Shop:
     __file_name = 'products.txt'
 
     def get_products(self):
-        with open(self.__file_name, 'r') as products_file:
-            return products_file.read()
+        product_file = open(self.__file_name, 'r')
+        return product_file.read()
 
     def add(self, *products):
         for product in products:
@@ -22,8 +22,8 @@ class Shop:
                 print(f'Product {product.name} is already in the store')
                 continue
 
-            with open(self.__file_name, 'a') as product_file:
-                product_file.write(str(product))
+            product_file = open(self.__file_name, 'a')
+            product_file.write(str(product))
 
 
 if __name__ == '__main__':
