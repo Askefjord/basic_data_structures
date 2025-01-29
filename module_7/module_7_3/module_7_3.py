@@ -17,24 +17,31 @@ class WordsFinder:
                 for chars_of_punctuation in string.punctuation:
                     word = word.replace(chars_of_punctuation, ' ')
                     dict_of_words[files] = word.split()
-            return dict_of_words
+        return dict_of_words
 
     def find(self, word):
         dict_founded_words = {}
 
         for file_name, words in self.get_all_words().items():
-                dict_founded_words[file_name] = words.index(word)
+            for low_word in words:
+                low_word.lower()
+
+                try:
+                    dict_founded_words[file_name] = low_word.index(word.lower())
+                except ValueError:
+                    dict_founded_words[file_name] = 'Not found'
+
         return dict_founded_words
 
     def count(self, word):
         dict_counted_words = {}
 
         for file_name, words in self.get_all_words().items():
-                if word in self.get_all_words().keys():
-                    dict_counted_words[file_name] = words.index(word)
+            dict_counted_words[file_name] = words.count(word.lower())
         return dict_counted_words
 
 
 x = WordsFinder('text.txt', 'test.txt')
 x.get_all_words()
 print(x.find('text'))
+print(x.count('text'))
