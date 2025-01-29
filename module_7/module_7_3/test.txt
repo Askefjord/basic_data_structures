@@ -1,1 +1,1 @@
-setp Text
+setup Text

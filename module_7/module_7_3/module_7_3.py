@@ -14,7 +14,7 @@ class WordsFinder:
                 file.seek(0)
                 word = file.read()
 
-                for chars_of_punctuation in string.punctuation:
+                for chars_of_punctuation in string.punctuation: # create "for" generator
                     word = word.replace(chars_of_punctuation, ' ')
                     dict_of_words[files] = word.split()
         return dict_of_words
@@ -23,11 +23,10 @@ class WordsFinder:
         dict_founded_words = {}
 
         for file_name, words in self.get_all_words().items():
-            for low_word in words:
-                low_word.lower()
+            low_words = [low.lower() for low in words]
 
                 try:
-                    dict_founded_words[file_name] = low_word.index(word.lower())
+                    dict_founded_words[file_name] = low_words.index(word.lower())
                 except ValueError:
                     dict_founded_words[file_name] = 'Not found'
 
