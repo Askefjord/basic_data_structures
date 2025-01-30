@@ -39,7 +39,7 @@ class WordsFinder:
         return dict_counted_words
 
 
-x = WordsFinder('text.txt')
-x.get_all_words()
-print(x.find('TExt'))
-print(x.count('TEXT'))
+finder = WordsFinder('text.txt')
+finder.get_all_words()
+print(finder.find('TExt'))
+print(finder.count('TEXT'))
